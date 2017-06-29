@@ -1,12 +1,23 @@
 import { expect, tap } from 'tapbundle'
 import * as smartwebdriver from '../dist/index'
 
-tap.test('should install webdrivers', async () => {
-  await smartwebdriver.install()
+let mySmartwebdriver: smartwebdriver.SmartWebdriver
+
+tap.test('should create a SmartWebdriver instance', async () => {
+  mySmartwebdriver = new smartwebdriver.SmartWebdriver()
+  expect(mySmartwebdriver).to.be.instanceof(smartwebdriver.SmartWebdriver)
+})
+
+tap.test('should install the drivers', async () => {
+  await mySmartwebdriver.install()
 })
 
 tap.test('should start the server', async () => {
-  await smartwebdriver.start()
+  await mySmartwebdriver.start()
+})
+
+tap.test('should be able to kill the server', async () => {
+  await mySmartwebdriver.stop()
 })
 
 tap.start()

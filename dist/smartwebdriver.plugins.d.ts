@@ -5,4 +5,5 @@ import * as path from 'path';
 import * as seleniumStandalone from 'selenium-standalone';
 import * as smartfile from 'smartfile';
 import * as smartq from 'smartq';
-export { download, fs, path, seleniumStandalone, smartq, smartfile };
+import * as smartshell from 'smartshell';
+export { download, fs, path, seleniumStandalone, smartq, smartfile, smartshell };
