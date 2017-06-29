@@ -14,12 +14,14 @@ export class SmartWebdriver {
   childProcess
   private _installed: boolean = false
 
-
-  constructor() {
-
+  /**
+   * the constructor
+   */
+  constructor () {
+    // nothing here
   }
 
-  async install() {
+  async install () {
     let done = plugins.smartq.defer()
     plugins.seleniumStandalone.install({
       // https://selenium-release.storage.googleapis.com/index.html
@@ -54,6 +56,9 @@ export class SmartWebdriver {
     return await done2.promise
   }
 
+  /**
+   * Starts the SmartWebdriver instance
+   */
   async start () {
     let done = plugins.smartq.defer()
     plugins.seleniumStandalone.start({
@@ -74,6 +79,9 @@ export class SmartWebdriver {
     return await done.promise
   }
 
+  /**
+   * stops the SmartWebdriver instance
+   */
   async stop () {
     this.childProcess.kill()
   }
