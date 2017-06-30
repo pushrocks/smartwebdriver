@@ -1,5 +1,4 @@
-# gitzone standard
-image: hosttoday/ht-docker-node:npmci
+image: hosttoday/ht-docker-node:npmcijava
 
 cache:
   paths:

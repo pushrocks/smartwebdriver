@@ -19,6 +19,7 @@
     "smartfile": "^4.2.17",
     "smartq": "^1.1.1",
     "smartshell": "^1.0.8",
-    "typings-global": "^1.0.16"
+    "typings-global": "^1.0.16",
+    "webdriverio": "^4.8.0"
   }
 }
