@@ -10,18 +10,29 @@ let drivers = {
   }
 }
 
+// types
+export type TProvider = 'local' | 'sauce'
+
+// interfaces
+export interface ISmartdriverOptions {
+  provider: TProvider
+}
+
 export class SmartWebdriver {
+  private installed = plugins.smartq.defer() // wether SmartDriver is installed all right
   childProcess
   private _installed: boolean = false
 
   /**
    * the constructor
    */
-  constructor () {
-    // nothing here
+  constructor (optionsArg: ISmartdriverOptions) {
+    if (optionsArg.provider === 'local') {
+      
+    }
   }
 
-  async install () {
+  async installLocal () {
     let done = plugins.smartq.defer()
     plugins.seleniumStandalone.install({
       // https://selenium-release.storage.googleapis.com/index.html
@@ -59,7 +70,7 @@ export class SmartWebdriver {
   /**
    * Starts the SmartWebdriver instance
    */
-  async start () {
+  async startLocal () {
     let done = plugins.smartq.defer()
     plugins.seleniumStandalone.start({
       version: '3.4',
@@ -82,7 +93,7 @@ export class SmartWebdriver {
   /**
    * stops the SmartWebdriver instance
    */
-  async stop () {
+  async stopLocal () {
     this.childProcess.kill()
   }
 

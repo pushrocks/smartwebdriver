@@ -10,6 +10,7 @@
     "test": "(npmts --notest && ts-node --compilerOptions '{\"target\":\"es6\"}' test/test.ts)"
   },
   "devDependencies": {
+    "smartdelay": "^1.0.3",
     "tapbundle": "^1.0.13"
   },
   "dependencies": {
