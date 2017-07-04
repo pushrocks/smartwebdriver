@@ -6,7 +6,7 @@ import * as smartwebdriver from '../dist/index'
 let mySmartwebdriver: smartwebdriver.SmartWebdriver
 
 tap.test('should create a SmartWebdriver instance', async () => {
-  mySmartwebdriver = new smartwebdriver.SmartWebdriver({provider: 'local'})
+  mySmartwebdriver = new smartwebdriver.SmartWebdriver()
   expect(mySmartwebdriver).to.be.instanceof(smartwebdriver.SmartWebdriver)
 })
 
