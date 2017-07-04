@@ -13,13 +13,13 @@ export declare class SmartWebdriver {
      */
     constructor(optionsArg: ISmartdriverOptions);
     getLocalClient(): Client<void>;
-    installLocal(): Promise<{}>;
+    installSmart(): Promise<{}>;
     /**
      * Starts the SmartWebdriver instance
      */
-    startLocal(): Promise<{}>;
+    startSmart(): Promise<{}>;
     /**
      * stops the SmartWebdriver instance
      */
-    stopLocal(): Promise<void>;
+    stopSmart(): Promise<void>;
 }

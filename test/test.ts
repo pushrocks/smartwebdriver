@@ -11,11 +11,11 @@ tap.test('should create a SmartWebdriver instance', async () => {
 })
 
 tap.test('should install the drivers', async () => {
-  await mySmartwebdriver.installLocal()
+  await mySmartwebdriver.installSmart()
 })
 
 tap.test('should start the server', async () => {
-  await mySmartwebdriver.startLocal()
+  await mySmartwebdriver.startSmart()
 })
 
 tap.test('should get a valid client', async () => {
@@ -28,7 +28,7 @@ tap.test('should get a valid client', async () => {
 })
 
 tap.test('should be able to kill the server', async () => {
-  await mySmartwebdriver.stopLocal()
+  await mySmartwebdriver.stopSmart()
 })
 
 tap.start()
