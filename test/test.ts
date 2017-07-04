@@ -11,7 +11,7 @@ tap.test('should create a SmartWebdriver instance', async () => {
 })
 
 tap.test('should get a valid client', async () => {
-  let client: any = (await mySmartwebdriver.getLocalClient()).client
+  let client = (await mySmartwebdriver.getLocalClient()).client
   await client.init().url('https://google.com')
   let text = await client.getText('#_eEe')
   await client.end()
