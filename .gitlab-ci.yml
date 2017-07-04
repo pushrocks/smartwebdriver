@@ -1,4 +1,6 @@
 image: hosttoday/ht-docker-node:npmcijava
+services:
+  - selenium/standalone-chrome
 
 cache:
   paths:

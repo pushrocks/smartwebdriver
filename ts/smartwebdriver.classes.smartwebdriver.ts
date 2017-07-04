@@ -1,6 +1,8 @@
 import * as plugins from './smartwebdriver.plugins'
 import * as paths from './smartwebdriver.paths'
 
+import { Client } from 'webdriverio'
+
 let drivers = {
   chrome: {
     // https://chromedriver.storage.googleapis.com/index.html
@@ -26,10 +28,16 @@ export class SmartWebdriver {
   /**
    * the constructor
    */
-  constructor (optionsArg: ISmartdriverOptions) {
+  constructor(optionsArg: ISmartdriverOptions) {
     if (optionsArg.provider === 'local') {
-      
     }
+  }
+
+  getLocalClient () {
+    let client = plugins.webdriverio.remote({
+      desiredCapabilities: { browserName: 'chrome' }
+    })
+    return client
   }
 
   async installLocal () {
@@ -57,7 +65,8 @@ export class SmartWebdriver {
     })
 
     await done.promise
-    await plugins.smartshell.execSilent(`(cd ${paths.chromeDriverDir} && chmod -x *)`)
+    await plugins.smartdelay.delayFor(1000)
+    await plugins.smartshell.exec(`(cd ${paths.chromeDriverDir} && chmod +x *)`)
     let done2 = plugins.smartq.defer()
     plugins.download('https://selenium-release.storage.googleapis.com/3.4/selenium-server-standalone-3.4.0.jar')
       .pipe(plugins.fs.createWriteStream(plugins.path.join(paths.assetDir, 'selenium-server/3.4-server.jar')))
@@ -70,7 +79,7 @@ export class SmartWebdriver {
   /**
    * Starts the SmartWebdriver instance
    */
-  async startLocal () {
+  async startLocal() {
     let done = plugins.smartq.defer()
     plugins.seleniumStandalone.start({
       version: '3.4',
@@ -93,7 +102,7 @@ export class SmartWebdriver {
   /**
    * stops the SmartWebdriver instance
    */
-  async stopLocal () {
+  async stopLocal() {
     this.childProcess.kill()
   }
 

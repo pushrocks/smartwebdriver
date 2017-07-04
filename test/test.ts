@@ -18,8 +18,13 @@ tap.test('should start the server', async () => {
   await mySmartwebdriver.startLocal()
 })
 
-tap.test('server should stay alive', async () => {
-  await smartdelay.delayFor(3000)
+tap.test('should get a valid client', async () => {
+  let client = mySmartwebdriver.getLocalClient()
+  await client.init().url('https://google.com')
+  let text = await client.getText('#_eEe')
+  await client.end()
+  await client.init().url('https://thalia.de').click('[data-test="loginLink"]').end()
+  expect(text).to.equal('Google.de angeboten auf: English')
 })
 
 tap.test('should be able to kill the server', async () => {
