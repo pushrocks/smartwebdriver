@@ -12,7 +12,7 @@ export declare class SmartWebdriver {
      * the constructor
      */
     constructor(optionsArg?: ISmartdriverOptions);
-    getLocalClient(): Promise<{
+    getClient(): Promise<{
         client: Client<void>;
     }>;
     private installSmart();

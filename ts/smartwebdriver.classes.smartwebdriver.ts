@@ -32,7 +32,7 @@ export class SmartWebdriver {
     // nothing here
   }
 
-  async getLocalClient () {
+  async getClient () {
     let options: any = {}
     if (!process.env.CI) {
       await this.installSmart()
