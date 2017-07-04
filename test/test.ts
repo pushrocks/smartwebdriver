@@ -15,7 +15,12 @@ tap.test('should get a valid client', async () => {
   await client.init().url('https://google.com')
   let text = await client.getText('#_eEe')
   await client.end()
-  await client.init().url('https://thalia.de').click('[data-test="loginLink"]').end()
+  await client.init().url('https://thalia.de').click('[data-test="loginLink"]')
+  await client.execute(() => {
+    alert('Hi! This message should stay on for 2 seconds')
+  })
+  await smartdelay.delayFor(2000)
+  await client.end()
   expect(text).to.equal('Google.de angeboten auf: English')
 })
 
