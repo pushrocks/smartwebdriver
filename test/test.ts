@@ -10,16 +10,8 @@ tap.test('should create a SmartWebdriver instance', async () => {
   expect(mySmartwebdriver).to.be.instanceof(smartwebdriver.SmartWebdriver)
 })
 
-tap.test('should install the drivers', async () => {
-  await mySmartwebdriver.installSmart()
-})
-
-tap.test('should start the server', async () => {
-  await mySmartwebdriver.startSmart()
-})
-
 tap.test('should get a valid client', async () => {
-  let client = mySmartwebdriver.getLocalClient()
+  let client: any = (await mySmartwebdriver.getLocalClient()).client
   await client.init().url('https://google.com')
   let text = await client.getText('#_eEe')
   await client.end()
