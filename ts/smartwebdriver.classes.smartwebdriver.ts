@@ -13,7 +13,7 @@ let drivers = {
 }
 
 // types
-export type TProvider = 'local' | 'sauce'
+export type TProvider = 'smart' | 'sauce'
 
 // interfaces
 export interface ISmartdriverOptions {
@@ -28,7 +28,7 @@ export class SmartWebdriver {
   /**
    * the constructor
    */
-  constructor(optionsArg: ISmartdriverOptions) {
+  constructor(optionsArg?: ISmartdriverOptions) {
     // nothing here
   }
 

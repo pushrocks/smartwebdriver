@@ -1,6 +1,6 @@
 /// <reference types="webdriverio" />
 import { Client } from 'webdriverio';
-export declare type TProvider = 'local' | 'sauce';
+export declare type TProvider = 'smart' | 'sauce';
 export interface ISmartdriverOptions {
     provider: TProvider;
 }
@@ -11,7 +11,7 @@ export declare class SmartWebdriver {
     /**
      * the constructor
      */
-    constructor(optionsArg: ISmartdriverOptions);
+    constructor(optionsArg?: ISmartdriverOptions);
     getLocalClient(): Promise<{
         client: Client<void>;
     }>;
