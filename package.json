@@ -1,7 +1,7 @@
 {
   "name": "smartwebdriver",
   "version": "1.0.10",
-  "description": "a smart description",
+  "description": "selenium for node the smart way",
   "main": "dist/index.js",
   "typings": "dist/index.d.ts",
   "author": "Lossless GmbH",
