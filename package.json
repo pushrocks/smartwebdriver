@@ -1,6 +1,6 @@
 {
   "name": "smartwebdriver",
-  "version": "1.0.10",
+  "version": "1.0.11",
   "description": "selenium for node the smart way",
   "main": "dist/index.js",
   "typings": "dist/index.d.ts",
