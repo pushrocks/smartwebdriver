@@ -1,3 +1,7 @@
+---
+title: smartwebdriver
+description: selenium for node the smart way
+---
 # smartwebdriver
 selenium for node the smart way
 
@@ -29,6 +33,21 @@ let client = (await mySmartwebdriver.getClient).client
 await client.init().url('https://google.com').click('...') // and so on
 await client.end()
 mySmartwedirver.stopSmart()
+```
+
+### Local and CI use
+This package is designed to work locally on Linux and MacOSX and in GitLab CI
+
+For use in GitLab CI please install gitzone like so:
+
+```sh
+yarn install gitzone
+```
+
+and then type in your project directory
+
+```sh
+gzone add ci
 ```
 
 For further information read the linked docs at the top of this README.
